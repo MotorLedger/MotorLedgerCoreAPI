@@ -27,7 +27,7 @@ public class Sale {
     @Column(name = "sale_model_id", insertable = false, updatable = false)
     private long modelId;
     @Column(name = "trade_in_id", insertable = false, updatable = false)
-    private long tradeInId;
+    private Long tradeInId;
     @ManyToOne
     @JoinColumn(name = "sale_model_id")
     private Model model;
@@ -103,11 +103,11 @@ public class Sale {
         this.modelId = modelId;
     }
 
-    public long getTradeInId() {
+    public Long getTradeInId() {
         return tradeInId;
     }
 
-    public void setTradeInId(long tradeInId) {
+    public void setTradeInId(Long tradeInId) {
         this.tradeInId = tradeInId;
     }
 
