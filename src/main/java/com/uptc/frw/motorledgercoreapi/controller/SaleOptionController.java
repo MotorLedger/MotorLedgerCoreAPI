@@ -11,16 +11,18 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("SaleOptions")
+@RequestMapping("sale-options")
 public class SaleOptionController {
     @Autowired
     private SaleOptionService saleOptionService;
+
     @GetMapping
-    public List<SaleOption> getAll() {
-        return saleOptionService.findAllSaleOption();
+    public List<SaleOption> getAllSaleOptions() {
+        return saleOptionService.getAllSaleOptions();
     }
+
     @GetMapping("/{id}")
-    public SaleOption getSaleOption(@PathVariable Long id) {
+    public SaleOption getSaleOptionById(@PathVariable long id) {
         return saleOptionService.getSaleOptionById(id);
     }
 }

@@ -11,16 +11,18 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("TradeIns")
+@RequestMapping("trade-ins")
 public class TradeInController {
     @Autowired
     private TradeInService tradeInService;
+
     @GetMapping
     public List<TradeIn> getAll() {
-        return tradeInService.findAllTradeIn();
+        return tradeInService.getAllTradeIns();
     }
+
     @GetMapping("/{id}")
-    public TradeIn getTradeIn(@PathVariable Long id) {
+    public TradeIn getTradeInById(@PathVariable long id) {
         return tradeInService.getTradeInById(id);
     }
 }

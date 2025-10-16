@@ -12,7 +12,7 @@ public class TradeInService {
     @Autowired
     private TradeInRepository tradeInRepository;
 
-    public List<TradeIn> findAllTradeIn() {
+    public List<TradeIn> getAllTradeIns() {
         return tradeInRepository.findAll();
     }
 

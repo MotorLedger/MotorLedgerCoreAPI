@@ -12,7 +12,7 @@ public class SaleService {
     @Autowired
     private SaleRepository saleRepository;
 
-    public List<Sale> findAllSale() {
+    public List<Sale> getAllSales() {
         return saleRepository.findAll();
     }
 

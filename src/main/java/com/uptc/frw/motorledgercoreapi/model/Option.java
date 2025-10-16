@@ -1,5 +1,6 @@
 package com.uptc.frw.motorledgercoreapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -15,6 +16,7 @@ public class Option {
     private String name;
     @Column(name = "option_description")
     private String description;
+    @JsonIgnore
     @OneToMany(mappedBy = "option")
     private List<ModelOption> modelOptions;
 
