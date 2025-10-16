@@ -1,9 +1,7 @@
 package com.uptc.frw.motorledgercoreapi.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
@@ -12,6 +10,7 @@ import java.util.Date;
 public class TradeIn {
     @Id
     @Column(name = "trade_in_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "trade_in_plate")
     private String plate;
@@ -19,10 +18,19 @@ public class TradeIn {
     private double appraisalPrice;
     @Column(name = "trade_in_cession_date")
     private Date cessionDate;
-    @Column(name = "trade_in_customer_id")
+    @Column(name = "trade_in_customer_id", insertable = false, updatable = false)
     private long customerId;
-    @Column(name = "trade_in_model_id")
+    @Column(name = "trade_in_model_id", insertable = false, updatable = false)
     private long modelId;
+    @ManyToOne
+    @JoinColumn(name = "trade_in_model_id")
+    private Model model;
+    @ManyToOne
+    @JoinColumn(name = "trade_in_customer_id")
+    private User customer;
+    @JsonIgnore
+    @OneToOne(mappedBy = "tradeIn")
+    private Sale sale;
 
     public TradeIn() {
     }
@@ -73,6 +81,30 @@ public class TradeIn {
 
     public void setModelId(long modelId) {
         this.modelId = modelId;
+    }
+
+    public Model getModel() {
+        return model;
+    }
+
+    public void setModel(Model model) {
+        this.model = model;
+    }
+
+    public User getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(User customer) {
+        this.customer = customer;
+    }
+
+    public Sale getSale() {
+        return sale;
+    }
+
+    public void setSale(Sale sale) {
+        this.sale = sale;
     }
 
     @Override

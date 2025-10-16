@@ -1,22 +1,26 @@
 package com.uptc.frw.motorledgercoreapi.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "sale_options")
 public class SaleOption {
     @Id
     @Column(name = "sale_option_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "option_price_at_sale")
     private double optionPriceAtSale;
-    @Column(name = "sale_id")
+    @Column(name = "sale_id", insertable = false, updatable = false)
     private long saleId;
-    @Column(name = "model_option_id")
+    @Column(name = "model_option_id", insertable = false, updatable = false)
     private long modelOptionId;
+    @ManyToOne
+    @JoinColumn(name = "model_option_id")
+    private ModelOption modelOption;
+    @ManyToOne
+    @JoinColumn(name = "sale_id")
+    private Sale sale;
 
     public SaleOption() {
     }
@@ -51,6 +55,22 @@ public class SaleOption {
 
     public void setModelOptionId(long modelOptionId) {
         this.modelOptionId = modelOptionId;
+    }
+
+    public ModelOption getModelOption() {
+        return modelOption;
+    }
+
+    public void setModelOption(ModelOption modelOption) {
+        this.modelOption = modelOption;
+    }
+
+    public Sale getSale() {
+        return sale;
+    }
+
+    public void setSale(Sale sale) {
+        this.sale = sale;
     }
 
     @Override

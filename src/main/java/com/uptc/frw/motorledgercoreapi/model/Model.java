@@ -1,15 +1,16 @@
 package com.uptc.frw.motorledgercoreapi.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "models")
 public class Model {
     @Id
     @Column(name = "model_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "model_name")
     private String name;
@@ -17,8 +18,20 @@ public class Model {
     private double displacement;
     @Column(name = "model_base_price")
     private double basePrice;
-    @Column(name = "brand_id")
+    @Column(name = "brand_id", insertable = false, updatable = false)
     private long brandId;
+    @ManyToOne
+    @JoinColumn(name = "brand_id")
+    private Brand brand;
+    @JsonIgnore
+    @OneToMany(mappedBy = "model")
+    private List<TradeIn> tradeIns;
+    @JsonIgnore
+    @OneToMany(mappedBy = "model")
+    private List<ModelOption> modelOptions;
+    @JsonIgnore
+    @OneToMany(mappedBy = "model")
+    private List<Sale> sales;
 
     public Model() {
     }
@@ -61,6 +74,38 @@ public class Model {
 
     public void setBrandId(long brandId) {
         this.brandId = brandId;
+    }
+
+    public Brand getBrand() {
+        return brand;
+    }
+
+    public void setBrand(Brand brand) {
+        this.brand = brand;
+    }
+
+    public List<TradeIn> getTradeIns() {
+        return tradeIns;
+    }
+
+    public void setTradeIns(List<TradeIn> tradeIns) {
+        this.tradeIns = tradeIns;
+    }
+
+    public List<ModelOption> getModelOptions() {
+        return modelOptions;
+    }
+
+    public void setModelOptions(List<ModelOption> modelOptions) {
+        this.modelOptions = modelOptions;
+    }
+
+    public List<Sale> getSales() {
+        return sales;
+    }
+
+    public void setSales(List<Sale> sales) {
+        this.sales = sales;
     }
 
     @Override

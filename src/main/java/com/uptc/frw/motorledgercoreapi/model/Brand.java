@@ -1,18 +1,22 @@
 package com.uptc.frw.motorledgercoreapi.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "brands")
 public class Brand {
     @Id
     @Column(name = "brand_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     @Column(name = "brand_name")
     private String name;
+    @JsonIgnore
+    @OneToMany(mappedBy = "brand")
+    private List<Model> models;
 
     public Brand() {
     }
@@ -31,6 +35,14 @@ public class Brand {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Model> getModels() {
+        return models;
+    }
+
+    public void setModels(List<Model> models) {
+        this.models = models;
     }
 
     @Override
