@@ -11,11 +11,12 @@ import java.util.List;
 public class UserService {
     @Autowired
     private UserRepository userRepository;
-    public List<User> findAllUser(){
+
+    public List<User> findAllUser() {
         return userRepository.findAll();
     }
-    public User getUserById(Long id){
-        User user = userRepository.findById(id).orElse(null);
-        return user;
+
+    public User getUserById(long id) {
+        return userRepository.findById(id).orElse(null);
     }
 }

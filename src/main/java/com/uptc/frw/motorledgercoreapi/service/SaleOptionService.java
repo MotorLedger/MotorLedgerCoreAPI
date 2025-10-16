@@ -11,11 +11,12 @@ import java.util.List;
 public class SaleOptionService {
     @Autowired
     private SaleOptionRepository saleOptionRepository;
-    public List<SaleOption> findAllSaleOption(){
+
+    public List<SaleOption> findAllSaleOption() {
         return saleOptionRepository.findAll();
     }
-    public SaleOption getSaleOptionById(Long id){
-        SaleOption saleOption = saleOptionRepository.findById(id).orElse(null);
-        return saleOption;
+
+    public SaleOption getSaleOptionById(long id) {
+        return saleOptionRepository.findById(id).orElse(null);
     }
 }

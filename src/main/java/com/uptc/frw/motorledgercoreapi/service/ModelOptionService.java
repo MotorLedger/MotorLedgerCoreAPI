@@ -16,6 +16,10 @@ public class ModelOptionService {
     public List<ModelOption> getAllModelOptions() {
         return modelOptionRepository.findAll();
     }
+
+    public ModelOption getModelOptionById(long id) {
+        return modelOptionRepository.findById(id).orElse(null);
+    }
 }
 
 

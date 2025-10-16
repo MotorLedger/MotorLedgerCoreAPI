@@ -15,5 +15,9 @@ public class ModelService {
     public List<Model> getAllModels() {
         return modelRepository.findAll();
     }
+
+    public Model getModelById(long id) {
+        return modelRepository.findById(id).orElse(null);
+    }
 }
 
