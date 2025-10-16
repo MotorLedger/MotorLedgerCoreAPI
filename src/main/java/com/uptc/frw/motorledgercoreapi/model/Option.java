@@ -10,45 +10,45 @@ import jakarta.persistence.Table;
 public class Option {
     @Id
     @Column(name = "option_id")
-    private long optionId;
+    private long id;
     @Column(name = "option_name")
-    private String optionName;
+    private String name;
     @Column(name = "option_description")
-    private String optionDescription;
+    private String description;
 
     public Option() {
     }
 
-    public long getOptionId() {
-        return optionId;
+    public long getId() {
+        return id;
     }
 
-    public void setOptionId(long optionId) {
-        this.optionId = optionId;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public String getOptionName() {
-        return optionName;
+    public String getName() {
+        return name;
     }
 
-    public void setOptionName(String optionName) {
-        this.optionName = optionName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getOptionDescription() {
-        return optionDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setOptionDescription(String optionDescription) {
-        this.optionDescription = optionDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
     public String toString() {
         return "Option{" +
-                "optionId=" + optionId +
-                ", optionName='" + optionName + '\'' +
-                ", optionDescription='" + optionDescription + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
                 '}';
     }
 }

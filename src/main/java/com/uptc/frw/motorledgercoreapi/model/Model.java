@@ -10,49 +10,49 @@ import jakarta.persistence.Table;
 public class Model {
     @Id
     @Column(name = "model_id")
-    private long modelId;
+    private long id;
     @Column(name = "model_name")
-    private String modelName;
+    private String name;
     @Column(name = "model_displacement")
-    private long modelDisplacement;
+    private double displacement;
     @Column(name = "model_base_price")
-    private long modelBasePrice;
+    private double basePrice;
     @Column(name = "brand_id")
     private long brandId;
 
     public Model() {
     }
 
-    public long getModelId() {
-        return modelId;
+    public long getId() {
+        return id;
     }
 
-    public void setModelId(long modelId) {
-        this.modelId = modelId;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public String getModelName() {
-        return modelName;
+    public String getName() {
+        return name;
     }
 
-    public void setModelName(String modelName) {
-        this.modelName = modelName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public long getModelDisplacement() {
-        return modelDisplacement;
+    public double getDisplacement() {
+        return displacement;
     }
 
-    public void setModelDisplacement(long modelDisplacement) {
-        this.modelDisplacement = modelDisplacement;
+    public void setDisplacement(double displacement) {
+        this.displacement = displacement;
     }
 
-    public long getModelBasePrice() {
-        return modelBasePrice;
+    public double getBasePrice() {
+        return basePrice;
     }
 
-    public void setModelBasePrice(long modelBasePrice) {
-        this.modelBasePrice = modelBasePrice;
+    public void setBasePrice(double basePrice) {
+        this.basePrice = basePrice;
     }
 
     public long getBrandId() {
@@ -66,10 +66,10 @@ public class Model {
     @Override
     public String toString() {
         return "Model{" +
-                "modelId=" + modelId +
-                ", modelName='" + modelName + '\'' +
-                ", modelDisplacement=" + modelDisplacement +
-                ", modelBasePrice=" + modelBasePrice +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", displacement=" + displacement +
+                ", basePrice=" + basePrice +
                 ", brandId=" + brandId +
                 '}';
     }

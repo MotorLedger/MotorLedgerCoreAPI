@@ -10,34 +10,34 @@ import jakarta.persistence.Table;
 public class Brand {
     @Id
     @Column(name = "brand_id")
-    private long brandId;
+    private long id;
     @Column(name = "brand_name")
-    private String BrandName;
+    private String name;
 
     public Brand() {
     }
 
-    public long getBrandId() {
-        return brandId;
+    public long getId() {
+        return id;
     }
 
-    public void setBrandId(long brandId) {
-        this.brandId = brandId;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public String getBrandName() {
-        return BrandName;
+    public String getName() {
+        return name;
     }
 
-    public void setBrandName(String brandName) {
-        BrandName = brandName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
         return "Brand{" +
-                "brandId=" + brandId +
-                ", BrandName='" + BrandName + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 '}';
     }
 }

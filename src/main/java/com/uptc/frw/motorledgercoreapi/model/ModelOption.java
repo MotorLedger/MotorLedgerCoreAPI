@@ -6,14 +6,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="model_options")
+@Table(name = "model_options")
 public class ModelOption {
     @Id
     @Column(name = "model_option_id")
-    private long modelOptionId;
+    private long id;
     @Column(name = "model_price")
-    private long modelPrice;
-    @Column(name="model_id")
+    private double price;
+    @Column(name = "model_id")
     private long modelId;
     @Column(name = "option_id")
     private long optionId;
@@ -21,20 +21,20 @@ public class ModelOption {
     public ModelOption() {
     }
 
-    public long getModelOptionId() {
-        return modelOptionId;
+    public long getId() {
+        return id;
     }
 
-    public void setModelOptionId(long modelOptionId) {
-        this.modelOptionId = modelOptionId;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public long getModelPrice() {
-        return modelPrice;
+    public double getPrice() {
+        return price;
     }
 
-    public void setModelPrice(long modelPrice) {
-        this.modelPrice = modelPrice;
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public long getModelId() {
@@ -56,8 +56,8 @@ public class ModelOption {
     @Override
     public String toString() {
         return "ModelOption{" +
-                "modelOptionId=" + modelOptionId +
-                ", modelPrice=" + modelPrice +
+                "id=" + id +
+                ", price=" + price +
                 ", modelId=" + modelId +
                 ", optionId=" + optionId +
                 '}';

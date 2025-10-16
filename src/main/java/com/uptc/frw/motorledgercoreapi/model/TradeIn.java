@@ -6,32 +6,33 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 import java.util.Date;
+
 @Entity
 @Table(name = "trade_ins")
 public class TradeIn {
     @Id
     @Column(name = "trade_in_id")
-    private long idTradeIns;
+    private long id;
     @Column(name = "trade_in_plate")
     private String plate;
     @Column(name = "trade_in_appraisal_price")
-    private long appraisalPrice;
+    private double appraisalPrice;
     @Column(name = "trade_in_cession_date")
     private Date cessionDate;
     @Column(name = "trade_in_customer_id")
-    private long idCustomer;
+    private long customerId;
     @Column(name = "trade_in_model_id")
-    private long idModel;
+    private long modelId;
 
     public TradeIn() {
     }
 
-    public long getIdTradeIns() {
-        return idTradeIns;
+    public long getId() {
+        return id;
     }
 
-    public void setIdTradeIns(long idTradeIns) {
-        this.idTradeIns = idTradeIns;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getPlate() {
@@ -42,11 +43,11 @@ public class TradeIn {
         this.plate = plate;
     }
 
-    public long getAppraisalPrice() {
+    public double getAppraisalPrice() {
         return appraisalPrice;
     }
 
-    public void setAppraisalPrice(long appraisalPrice) {
+    public void setAppraisalPrice(double appraisalPrice) {
         this.appraisalPrice = appraisalPrice;
     }
 
@@ -58,31 +59,31 @@ public class TradeIn {
         this.cessionDate = cessionDate;
     }
 
-    public long getIdCustomer() {
-        return idCustomer;
+    public long getCustomerId() {
+        return customerId;
     }
 
-    public void setIdCustomer(long idCustomer) {
-        this.idCustomer = idCustomer;
+    public void setCustomerId(long customerId) {
+        this.customerId = customerId;
     }
 
-    public long getIdModel() {
-        return idModel;
+    public long getModelId() {
+        return modelId;
     }
 
-    public void setIdModel(long idModel) {
-        this.idModel = idModel;
+    public void setModelId(long modelId) {
+        this.modelId = modelId;
     }
 
     @Override
     public String toString() {
         return "TradeIn{" +
-                "idTradeIns=" + idTradeIns +
+                "id=" + id +
                 ", plate='" + plate + '\'' +
                 ", appraisalPrice=" + appraisalPrice +
                 ", cessionDate=" + cessionDate +
-                ", idCustomer=" + idCustomer +
-                ", idModel=" + idModel +
+                ", customerId=" + customerId +
+                ", modelId=" + modelId +
                 '}';
     }
 }

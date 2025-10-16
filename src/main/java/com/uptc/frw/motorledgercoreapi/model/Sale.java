@@ -5,45 +5,47 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import java.time.LocalDateTime;
 import java.util.Date;
+
 @Entity
 @Table(name = "sales")
 public class Sale {
     @Id
     @Column(name = "sale_id")
-    private long idSales;
+    private long id;
     @Column(name = "sale_date")
-    private Date date;
+    private LocalDateTime date;
     @Column(name = "sale_new_plate")
     private String newPlate;
     @Column(name = "sale_total_price")
-    private long totalPrice;
+    private double totalPrice;
     @Column(name = "sale_customer_id")
-    private long idCustomer;
+    private long customerId;
     @Column(name = "sale_seller_id")
-    private long idSeller;
-    @Column(name = "model_id")
+    private long sellerId;
+    @Column(name = "sale_model_id")
     private long modelId;
     @Column(name = "trade_in_id")
-    private long idTradeIns;
+    private long tradeInId;
 
     public Sale() {
     }
 
-    public Date getDate() {
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public LocalDateTime getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDateTime date) {
         this.date = date;
-    }
-
-    public long getIdSales() {
-        return idSales;
-    }
-
-    public void setIdSales(long idSales) {
-        this.idSales = idSales;
     }
 
     public String getNewPlate() {
@@ -54,28 +56,28 @@ public class Sale {
         this.newPlate = newPlate;
     }
 
-    public long getTotalPrice() {
+    public double getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(long totalPrice) {
+    public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }
 
-    public long getIdCustomer() {
-        return idCustomer;
+    public long getCustomerId() {
+        return customerId;
     }
 
-    public void setIdCustomer(long idCustomer) {
-        this.idCustomer = idCustomer;
+    public void setCustomerId(long customerId) {
+        this.customerId = customerId;
     }
 
-    public long getIdSeller() {
-        return idSeller;
+    public long getSellerId() {
+        return sellerId;
     }
 
-    public void setIdSeller(long idSeller) {
-        this.idSeller = idSeller;
+    public void setSellerId(long sellerId) {
+        this.sellerId = sellerId;
     }
 
     public long getModelId() {
@@ -86,25 +88,25 @@ public class Sale {
         this.modelId = modelId;
     }
 
-    public long getIdTradeIns() {
-        return idTradeIns;
+    public long getTradeInId() {
+        return tradeInId;
     }
 
-    public void setIdTradeIns(long idTradeIns) {
-        this.idTradeIns = idTradeIns;
+    public void setTradeInId(long tradeInId) {
+        this.tradeInId = tradeInId;
     }
 
     @Override
     public String toString() {
         return "Sale{" +
-                "idSales=" + idSales +
+                "id=" + id +
                 ", date=" + date +
                 ", newPlate='" + newPlate + '\'' +
                 ", totalPrice=" + totalPrice +
-                ", idCustomer=" + idCustomer +
-                ", idSeller=" + idSeller +
+                ", customerId=" + customerId +
+                ", sellerId=" + sellerId +
                 ", modelId=" + modelId +
-                ", idTradeIns=" + idTradeIns +
+                ", tradeInId=" + tradeInId +
                 '}';
     }
 }

@@ -10,23 +10,23 @@ import jakarta.persistence.Table;
 public class User {
     @Id
     @Column(name = "user_id")
-    private long idUsers;
+    private long id;
     @Column(name = "user_name")
     private String name;
-    @Column(name = "user_email")
-    private String email;
+    @Column(name = "user_address")
+    private String address;
     @Column(name = "user_phone")
     private String phone;
 
     public User() {
     }
 
-    public long getIdUsers() {
-        return idUsers;
+    public long getId() {
+        return id;
     }
 
-    public void setIdUsers(long idUsers) {
-        this.idUsers = idUsers;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -37,12 +37,12 @@ public class User {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+    public String getAddress() {
+        return address;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getPhone() {
@@ -56,10 +56,10 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "idUsers=" + idUsers +
+                "id=" + id +
                 ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", phone=" + phone +
+                ", address='" + address + '\'' +
+                ", phone='" + phone + '\'' +
                 '}';
     }
 }

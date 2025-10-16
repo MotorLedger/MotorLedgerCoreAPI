@@ -4,26 +4,45 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+
 @Entity
 @Table(name = "sale_options")
 public class SaleOption {
     @Id
+    @Column(name = "sale_option_id")
+    private long id;
+    @Column(name = "option_price_at_sale")
+    private double optionPriceAtSale;
     @Column(name = "sale_id")
-    private long idSales;
+    private long saleId;
     @Column(name = "model_option_id")
     private long modelOptionId;
-    @Column(name = "option_price_at_sale")
-    private long priceAtSale;
 
     public SaleOption() {
     }
 
-    public long getIdSales() {
-        return idSales;
+    public long getId() {
+        return id;
     }
 
-    public void setIdSales(long idSales) {
-        this.idSales = idSales;
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public double getOptionPriceAtSale() {
+        return optionPriceAtSale;
+    }
+
+    public void setOptionPriceAtSale(double optionPriceAtSale) {
+        this.optionPriceAtSale = optionPriceAtSale;
+    }
+
+    public long getSaleId() {
+        return saleId;
+    }
+
+    public void setSaleId(long saleId) {
+        this.saleId = saleId;
     }
 
     public long getModelOptionId() {
@@ -34,20 +53,13 @@ public class SaleOption {
         this.modelOptionId = modelOptionId;
     }
 
-    public long getPriceAtSale() {
-        return priceAtSale;
-    }
-
-    public void setPriceAtSale(long priceAtSale) {
-        this.priceAtSale = priceAtSale;
-    }
-
     @Override
     public String toString() {
         return "SaleOption{" +
-                "idSales=" + idSales +
+                "id=" + id +
+                ", optionPriceAtSale=" + optionPriceAtSale +
+                ", saleId=" + saleId +
                 ", modelOptionId=" + modelOptionId +
-                ", priceAtSale=" + priceAtSale +
                 '}';
     }
 }
