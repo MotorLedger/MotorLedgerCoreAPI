@@ -20,4 +20,22 @@ public class BrandService {
     public Brand getBrandById(long id) {
         return brandRepository.findById(id).orElse(null);
     }
+
+    public Brand saveBrand(Brand newBrand) {
+        return brandRepository.save(newBrand);
+    }
+
+    public Brand updateBrand(Brand oldBrand) {
+        Brand newBrand = getBrandById(oldBrand.getId());
+        if (newBrand != null) {
+            newBrand.setName(oldBrand.getName());
+            return saveBrand(newBrand);
+        } else {
+            throw new RuntimeException("Brand not found");
+        }
+    }
+
+    public void deleteBrand(long id) {
+        brandRepository.deleteById(id);
+    }
 }

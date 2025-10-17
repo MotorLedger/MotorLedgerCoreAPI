@@ -19,4 +19,23 @@ public class OptionService {
     public Option getOptionById(long id) {
         return optionRepository.findById(id).orElse(null);
     }
+
+    public Option saveOption(Option newOption) {
+        return optionRepository.save(newOption);
+    }
+
+    public Option updateOption(Option oldOption) {
+        Option newOption = getOptionById(oldOption.getId());
+        if (newOption != null) {
+            newOption.setName(oldOption.getName());
+            newOption.setDescription(oldOption.getDescription());
+            return saveOption(newOption);
+        } else {
+            throw new RuntimeException("Option not found");
+        }
+    }
+
+    public void deleteOption(long id) {
+        optionRepository.deleteById(id);
+    }
 }

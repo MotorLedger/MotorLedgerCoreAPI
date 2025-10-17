@@ -3,10 +3,7 @@ package com.uptc.frw.motorledgercoreapi.controller;
 import com.uptc.frw.motorledgercoreapi.model.User;
 import com.uptc.frw.motorledgercoreapi.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,5 +21,20 @@ public class UserController {
     @GetMapping("/{id}")
     public User getUserById(@PathVariable long id) {
         return userService.getUserById(id);
+    }
+
+    @PostMapping
+    public User saveUser(@RequestBody User user) {
+        return userService.saveUser(user);
+    }
+
+    @PutMapping
+    public User updateUser(@RequestBody User user) {
+        return userService.updateUser(user);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteUser(@PathVariable long id) {
+        userService.deleteUser(id);
     }
 }
