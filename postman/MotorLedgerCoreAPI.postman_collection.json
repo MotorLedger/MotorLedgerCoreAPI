@@ -452,7 +452,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 5,\r\n    \"plate\": \"OLD999\",\r\n    \"appraisalPrice\": 5001.0,\r\n    \"cessionDate\": \"2025-03-01T00:00:00.000+00:00\",\r\n    \"customerId\": 9,\r\n    \"modelId\": 9,\r\n    \"model\": {\r\n        \"id\": 9,\r\n        \"name\": \"Qashqai\",\r\n        \"displacement\": 1.33,\r\n        \"basePrice\": 25000.0,\r\n        \"brandId\": 7,\r\n        \"brand\": {\r\n            \"id\": 7,\r\n            \"name\": \"Nissan\"\r\n        }\r\n    },\r\n    \"customer\": {\r\n        \"id\": 9,\r\n        \"name\": \"Fiona Clarke\",\r\n        \"address\": \"5 Abbey Road, London NW8 9AY, United Kingdom\",\r\n        \"phone\": \"+44 7400 111006\"\r\n    }\r\n}",
+							"raw": "{\r\n    \"id\": 4,\r\n    \"plate\": \"OLD999\",\r\n    \"appraisalPrice\": 5001.0,\r\n    \"cessionDate\": \"2025-03-01T00:00:00.000+00:00\",\r\n    \"customerId\": 9,\r\n    \"modelId\": 9,\r\n    \"model\": {\r\n        \"id\": 9,\r\n        \"name\": \"Qashqai\",\r\n        \"displacement\": 1.33,\r\n        \"basePrice\": 25000.0,\r\n        \"brandId\": 7,\r\n        \"brand\": {\r\n            \"id\": 7,\r\n            \"name\": \"Nissan\"\r\n        }\r\n    },\r\n    \"customer\": {\r\n        \"id\": 9,\r\n        \"name\": \"Fiona Clarke\",\r\n        \"address\": \"5 Abbey Road, London NW8 9AY, United Kingdom\",\r\n        \"phone\": \"+44 7400 111006\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -948,7 +948,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 10,\r\n    \"optionPriceAtSale\": 883.0,\r\n    \"saleId\": 6,\r\n    \"modelOptionId\": 14\r\n}",
+							"raw": "{\r\n    \"id\": 9,\r\n    \"optionPriceAtSale\": 883.0,\r\n    \"saleId\": 6,\r\n    \"modelOptionId\": 14\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
