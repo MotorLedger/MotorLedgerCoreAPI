@@ -39,8 +39,14 @@ public class SaleService {
         newSale.setSeller(seller);
         Model model = modelService.getModelById(newSale.getModelId());
         newSale.setModel(model);
-        TradeIn tradeIn = tradeInService.getTradeInById(newSale.getTradeInId());
-        newSale.setTradeIn(tradeIn);
+
+        // Only look for TradeIn if tradeInId is not null
+        if (newSale.getTradeInId() != null) {
+            TradeIn tradeIn = tradeInService.getTradeInById(newSale.getTradeInId());
+            newSale.setTradeIn(tradeIn);
+        } else {
+            newSale.setTradeIn(null);
+        }
         return saleRepository.save(newSale);
     }
 
